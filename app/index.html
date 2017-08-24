@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Band Calendar</title>
+    <title>NUBS 2.0</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
@@ -32,7 +32,7 @@
     <link href="css/table.css" rel="stylesheet" type="text/css">
     <link href="css/datePicker.css" rel="stylesheet" type="text/css">
     <link href="css/timePicker.css" rel="stylesheet" type="text/css">
-    <link href="css/gigs.css" rel="stylesheet" type="text/css">
+    <link href="css/games.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -87,16 +87,34 @@
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <!-- <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        FB.init({
+            appId: '1758235390857038',
+            status: true,
+            xfbml: true,
+            version: 'v2.9'
+        });
+        FB.login(
+            function(response) {
+                console.log(response);
+            }, {
+                scope: 'user_likes',
+                auth_type: 'rerequest'
+            }
+        );
+    </script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyDFDzl9otaLrrXtyVI2FaTeFKIZxDfFS_k",
-            authDomain: "band-calendar-d77f2.firebaseapp.com",
-            databaseURL: "https://band-calendar-d77f2.firebaseio.com",
-            projectId: "band-calendar-d77f2",
-            storageBucket: "band-calendar-d77f2.appspot.com",
-            messagingSenderId: "698243681584"
+            apiKey: "AIzaSyAsMbPfsFJvoloKFl21Klmq6DlEHZSWbIY",
+            authDomain: "nubs2-1c8ca.firebaseapp.com",
+            databaseURL: "https://nubs2-1c8ca.firebaseio.com",
+            projectId: "nubs2-1c8ca",
+            storageBucket: "nubs2-1c8ca.appspot.com",
+            messagingSenderId: "1044327703187"
         };
         firebase.initializeApp(config);
     </script>
@@ -108,14 +126,11 @@
 
     <!--Data -->
     <script src="js/Data/Firebase.js"></script>
-    <script src="js/Data/Bands.js"></script>
-    <script src="js/Data/Gigs.js"></script>
-    <script src="js/Data/Holidays.js"></script>
-    <script src="js/Data/Practices.js"></script>
     <script src="js/Data/User.js"></script>
+    <script src="js/Data/Games.js"></script>
 
     <!-- UI -->
-    <script src="js/UI/Gigs/GigCard.js"></script>
+
     <script src="js/UI/Appbar.js"></script>
     <script src="js/UI/FAB.js"></script>
     <script src="js/UI/Dialog.js"></script>
@@ -132,12 +147,13 @@
     <script src="js/UI/Input/DatePicker.js"></script>
     <script src="js/UI/Input/TimePicker.js"></script>
 
+    <script src="js/UI/Games/NewGameCards.js"></script>
+
     <script src="js/UI.js"></script>
 
     <!--Screen -->
     <script src="js/Screen/Screen.js"></script>
-    <script src="js/Screen/Screen_Calendar.js"></script>
-    <script src="js/Screen/Screen_Bands.js"></script>
+    <script src="js/Screen/Screen_NewGame.js"></script>
 
     <script src="js/Application.js"></script>
 

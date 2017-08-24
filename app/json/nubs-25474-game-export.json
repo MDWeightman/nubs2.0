@@ -1,0 +1,51 @@
+{
+  "-KhkctKKxtG50r3fsygm" : {
+    "colour" : "#cceeee",
+    "data" : {
+      "units" : {
+        "default" : 10,
+        "max" : 10,
+        "min" : 0,
+        "type" : "Range"
+      }
+    },
+    "description" : "Contribute to group",
+    "name" : "Dictator",
+    "played" : 2,
+    "players" : 2
+  },
+  "-KhkgEpYy_Hz_f8xuHtv" : {
+    "data" : {
+      "units" : {
+        "default" : 10,
+        "max" : 10,
+        "min" : 0,
+        "type" : "Range"
+      }
+    },
+    "description" : "Altruism",
+    "name" : "Public Good",
+    "played" : 0,
+    "players" : 2
+  },
+  "KhiBe8Ih_wInWPJfIfk" : {
+    "data" : {
+      "units" : {
+        "default" : 10,
+        "max" : 10,
+        "min" : 0,
+        "name" : "Units",
+        "type" : "RANGE"
+      }
+    },
+    "description" : "Fairness",
+    "howToPlay" : {
+      "A" : "You have been given units. These units can be given to another player. You decide how many you keep and give away. Player B will decide to either accept these or decline. If player B declines then neither player will keep any of the units",
+      "B" : "Player A has given you sum of units from their own pile. You can either accept what you have been given or decline. If you decline neither of you will receive any of the total units"
+    },
+    "name" : "Ultimatum",
+    "played" : 0,
+    "players" : 2,
+    "playersToPlay" : 10
+  }
+}

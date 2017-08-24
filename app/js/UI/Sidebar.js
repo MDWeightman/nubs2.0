@@ -39,28 +39,24 @@ class Sidebar {
         if (this.groups.length == 0) {
             if (User.data) {
                 this.addGroup(new SidebarGroup({
-                    label: "Calendar",
+                    label: "Games",
                     items: [
+                        new SidebarItem({
+                            icon: Constants.SVG.NEW_GAME,
+                            label: 'New Game',
+                            screen: 'NewGame',
+                            event: () => {
+                                Screen_NewGame.clear();
+                                Application.Screen.set(Screen_NewGame);
+                            }
+                        }),
                         new SidebarItem({
                             icon: Constants.SVG.CALENDAR,
-                            label: 'Band Calendar',
-                            screen: 'BandCalendar',
+                            label: 'Played Games',
+                            screen: 'PlayedGames',
                             event: () => {
-                                Screen_Calendar.clear();
-                                Application.Screen.set(Screen_Calendar);
-                            }
-                        })
-                    ]
-                }));
-                this.addGroup(new SidebarGroup({
-                    label: "Bands",
-                    items: [
-                        new SidebarItem({
-                            icon: Constants.SVG.CONDUCTOR,
-                            label: 'Manage Bands',
-                            screen: 'Bands',
-                            event: () => {
-                                Application.Screen.set(Screen_Bands);
+                                Screen_PlayedGames.clear();
+                                Application.Screen.set(Screen_PlayedGames);
                             }
                         })
                     ]

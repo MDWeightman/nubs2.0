@@ -27,58 +27,47 @@ class _User extends Firebase {
             document.getElementById("appbar-user-name").removeEventListener("click", User.loginDialog);
         }
         setTimeout(() => {
-            Application.Screen.set(Screen_Calendar);
+            //Application.Screen.set(Screen_Calendar);
         }, 1000);
     }
 
-    updateUser(user) {
+    update(user, fbUser) {
         let data = {
-            name: user.displayName.split(" ")[0],
-            displayName: user.displayName,
+            firstName: fbUser.first_name,
+            lastName: fbUser.first_name,
+            displayName: fbUser.name,
             email: user.email,
             phoneNumber: user.phoneNumber,
             photoURL: user.photoURL,
-            uid: user.uid
+            link: fbUser.link,
+            gender: fbUser.gender,
+            locale: fbUser.locale,
+            uid: user.uid,
+            fbUid: fbUser.id
         }
         var updates = {};
-        updates[`/${this.node}/${data.uid}/name`] = data.name;
+        updates[`/${this.node}/${data.uid}/firstName`] = data.firstName;
+        updates[`/${this.node}/${data.uid}/lastName`] = data.lastName;
         updates[`/${this.node}/${data.uid}/displayName`] = data.displayName;
+        updates[`/${this.node}/${data.uid}/gender`] = data.gender;
         updates[`/${this.node}/${data.uid}/email`] = data.email;
         updates[`/${this.node}/${data.uid}/phoneNumber`] = data.phoneNumber;
         updates[`/${this.node}/${data.uid}/photoURL`] = data.photoURL;
         updates[`/${this.node}/${data.uid}/uid`] = data.uid;
+        updates[`/${this.node}/${data.uid}/uidFB`] = data.fbUid;
+        updates[`/${this.node}/${data.uid}/locale`] = data.locale;
+        updates[`/${this.node}/${data.uid}/link`] = data.link;
+        updates[`/${this.node}/${data.uid}/phoneNumber`] = data.phoneNumber;
         this.data = data;
         firebase.database().ref().update(updates).then(() => {
             this.getUser(true);
         })
     }
 
-    addBand(bandKey) {
-        if (!this.data.bands) {
-            this.data.bands = {}
-        }
-        this.data.bands[bandKey] = "";
-        return this.updateBands();
-    }
-
-    removeBand(bandKey) {
-        delete this.data.bands[bandKey]
-        return this.updateBands();
-    }
-
-    updateBands() {
-        var bands = {};
-        if (this.data.bands) {
-            for (let k in this.data.bands) {
-                bands[k] = Bands.data[k].name;
-            }
-            var updates = {};
-            updates[`/${this.node}/${this.data.uid}/bands`] = bands;
-            return firebase.database().ref().update(updates).then(() => {
-                return this.getUser();
-            });
-        }
-        return this.getUser();
+    getFbUser(user) {
+        FB.api(`/${user.providerData[0].uid}`, { fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,picture,timezone,updated_time,verified', access_token: '1758235390857038|c568abc88bd94a9dfef7de0283653e52' }, function(fbUser) {
+            User.update(user, fbUser);
+        });
     }
 
     getUser(render) {
@@ -88,17 +77,19 @@ class _User extends Firebase {
     }
 
     loginDialog() {
-        var provider = new firebase.auth.GoogleAuthProvider();
+        var provider = new firebase.auth.FacebookAuthProvider();
+        provider.addScope('user_birthday');
         firebase.auth().signInWithPopup(provider).then(function(result) {
             var token = result.credential.accessToken;
             User.setToken(token);
             var user = result.user;
-            User.updateUser(user);
+            User.getFbUser(user);
         }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             var email = error.email;
             var credential = error.credential;
+            console.error(error);
         });
     }
 
@@ -117,7 +108,7 @@ class _User extends Firebase {
         }
         if (this.data.displayName) {
             document.getElementById("appbar-user-avatar").classList.remove("hidden");
-            document.getElementById("appbar-user-name").innerHTML = this.data.name;
+            document.getElementById("appbar-user-name").innerHTML = this.data.firstName;
         }
         Application.render();
     }

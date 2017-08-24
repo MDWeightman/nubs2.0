@@ -11,16 +11,8 @@ class _Application {
         return null;
     }
 
-    getData(screen) {
-        Bands.getBands();
-        Gigs.getGigs();
-        Practices.getPractices();
-        Holidays.getHolidays();
-        if (screen) {
-            setTimeout(() => {
-                this.Screen.set(screen);
-            }, 1000);
-        }
+    getData() {
+        Games.getData();
     }
 
     readonly() {
@@ -31,7 +23,12 @@ class _Application {
         this.workspace.classList.remove("readonly");
     }
 
-    render() {
+    render(HTML) {
+        if (HTML) {
+            this.workspace.innerHTML = HTML;
+            UI.render();
+            return;
+        }
         this.clearReadonly();
         if (!User.isAuthenticated()) {
             User.loginDialog();
@@ -44,5 +41,5 @@ class _Application {
 }
 
 let Application = new _Application();
-Application.render();
 Application.getData();
+Application.render();
