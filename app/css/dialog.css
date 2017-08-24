@@ -1,0 +1,321 @@
+#dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999999;
+    overflow: hidden;
+}
+
+#dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.2;
+}
+
+#dialog-container {
+    z-index: 80;
+    min-width: 240px;
+    max-width: 80%;
+    max-height: 80%;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    transform: translate(0, -20%) scale(0.6);
+}
+
+#dialog-container.in {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+#dialog-container.out {
+    opacity: 0;
+    transform: translate(0, 20%) scale(1);
+}
+
+#dialog-header {
+    flex: 0 0 auto;
+    width: calc(100% - 30px);
+    height: 50px;
+    padding: 0px 20px 0px 10px;
+    background-color: #039be5;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 2px 2px 0px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#dialog.full #dialog-header {
+    width: 100%;
+    padding: 0px 00px 0px 0px;
+}
+
+#dialog-header.error {
+    background-color: #e53935;
+}
+
+#dialog-header-back {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 10px 10px;
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+#dialog-header-back:hover {
+    fill: rgba(255, 255, 255, 1);
+}
+
+#dialog.full #dialog-header-back {
+    display: block;
+}
+
+#dialog-header-text {
+    line-height: 28px;
+    padding: 10px 10px 10px 0px;
+}
+
+#dialog-content {
+    padding: 24px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    line-height: 20px;
+}
+
+#dialog-content.noPadding {
+    padding: 0px;
+}
+
+#dialog-actions {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+#dialog-actions:empty {
+    border: none;
+}
+
+.dialog-action-item {
+    height: 20px;
+    padding: 10px;
+    width: 100px;
+    flex: 1 0 auto;
+    cursor: pointer;
+}
+
+.dialog-action-item:hover {
+    background-color: #eeeeee;
+}
+
+.dialog-action-icon {
+    width: 30px;
+    height: 30px;
+    fill: rgba(255, 255, 255, 0.7);
+    padding: 10px 10px;
+}
+
+.dialog-action-icon:hover {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.dialog-action-item-text {
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dialog-form-item {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-form-item.line {
+    flex-direction: row;
+}
+
+.dialog-form-item-label {
+    color: #727272;
+    margin: 0px 0px 5px 0px;
+    font-size: 14px;
+}
+
+.dialog-form-item.line .dialog-form-item-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.dialog-form-item-label:after {
+    content: ":";
+    margin: 0px 0px 0px 5px;
+}
+
+.dialog-form-item-input input {
+    width: calc(100% - 16px);
+    height: 18px;
+    padding: 8px;
+    background-color: white;
+    border: 0;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    outline: 0;
+    transition: box-shadow .15s;
+    vertical-align: middle;
+    box-shadow: 0 0 0 transparent inset, 0 0 0 1px #e0e0e0 inset;
+}
+
+.dialog-form-item-input input:focus {
+    box-shadow: 0 -2px 0 #039be5 inset, 0 0 0 1px #e0e0e0 inset;
+}
+
+.dialog-form-item-input input.error {
+    box-shadow: 0 -2px 0 #F44336 inset, 0 0 0 1px #e0e0e0 inset;
+}
+
+.dialog-toast {
+    position: absolute;
+    top: 120px;
+    right: 24px;
+    background-color: #0288d1;
+    color: #ffffff;
+    border-radius: 2px;
+    padding: 10px;
+    transform: translateX(600px);
+    transition: transform .30s ease;
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
+
+.dialog-toast.active {
+    transform: translateX(0px);
+}
+
+.dialog-toast-text {
+    max-width: 400px;
+    white-space: pre-wrap;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+#dialog-error {
+    color: #F44336;
+}
+
+.dialog-text {
+    line-height: 20px;
+}
+
+.dialog-form-item .menu-label {
+    color: rgba(0, 0, 0, .7);
+    fill: rgba(0, 0, 0, .7);
+}
+
+.dialog-form-item.row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.dialog-form-item.row .dialog-form-item-label {
+    flex: 0 0 auto;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+.dialog-form-item.row .dialog-form-item-input {
+    flex: 1;
+}
+
+.dialog-form-item .menu {
+    height: 30px;
+    padding: 5px;
+}
+
+.dialog-form-item .menu-label-text {
+    font-size: 14px;
+}
+
+.dialog-form-item .header-label {
+    margin: 0px;
+}
+
+#dialog.full #dialog-container {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+
+#dialog.full #dialog-content {
+    height: calc(100% - 140px);
+}
+
+#dialog.full .dialog-form-item {
+    flex-direction: row;
+}
+
+#dialog.full .dialog-form-item .dialog-form-item-label {
+    flex: 0 0 auto;
+    width: 10%;
+}
+
+#dialog.full .dialog-form-item .dialog-form-item-input {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+#dialog.full #dialog-actions {
+    border-top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#dialog.full .dialog-action-item {
+    width: auto;
+    min-width: 50px;
+    padding: 15px 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#dialog.full .dialog-action-item:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+}
+
+#dialog.full .dialog-action-icon {
+    padding: 10px 10px;
+}

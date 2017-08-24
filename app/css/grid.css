@@ -1,0 +1,51 @@
+.grid {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background-color: transparent;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.grid-item {
+	flex: 0 0 auto;
+	background-color: transparent;
+	position: relative;
+	padding: 10px;
+	min-width: 120px;
+	width:calc(25% - 20px);
+}
+.grid-item:hover {
+	background-color: #ffffff;
+}
+
+
+.grid-item .grid-item-content {width: calc(100% - 30px);}
+
+.grid-item-action-container {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 40px;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+}
+
+.grid-item-action {
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	opacity: 0;
+	fill: rgba(0,0,0,0.4);
+}
+
+.grid-item-action-container:hover .grid-item-action {
+	fill: rgba(0,0,0,0.8);
+}
+
+.grid-item:hover .grid-item-action {
+	opacity: 1;
+}

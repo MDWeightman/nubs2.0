@@ -1,0 +1,100 @@
+.time-picker-container {
+    width: 550px;
+    display: flex;
+}
+
+.time-picker-clock-container {
+    flex: 1 1 auto;
+    background-color: #ffffff;
+}
+
+.time-picker-header {
+    width: 150px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #039be5;
+    color: #ffffff;
+    font-size: 56px;
+    line-height: 56px;
+    padding: 24px 24px;
+}
+
+.time-picker-header-time {
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.time-picker-header-time:first-of-type:after {
+    content: ':';
+    text-align: center;
+    margin: 0px 2px;
+}
+
+.time-picker-clock {
+    display: none;
+}
+
+.time-picker-clock.active {
+    display: block;
+}
+
+.clock-center {
+    fill: #0288d1;
+}
+
+.clock-number-overlay {
+    opacity: 0;
+}
+
+.clock-number-line {
+    fill: #dddddd;
+}
+
+.clock-number-circle {
+    fill: #dddddd;
+}
+
+.clock-number-circle text {
+    fill: #212121;
+    font-family: 'Roboto';
+}
+
+.clock-number-container {
+    cursor: pointer;
+}
+
+.clock-number-container:hover .clock-number-line {
+    fill: #0288d1;
+}
+
+.clock-number-container:hover text {
+    fill: #ffffff;
+}
+
+.clock-number-container:hover .clock-number-circle {
+    fill: #0288d1;
+}
+
+@media screen and (max-width: 620px) {
+    .time-picker-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .time-picker-header {
+        width: calc(100% - 12px);
+        font-size: 36px;
+        padding: 6px;
+        display: flex;
+        justify-content: center;
+    }
+    .time-picker-clock-container {
+        height: 400px;
+        align-self: center;
+    }
+    .time-picker-clock-container svg {
+        height: 400px;
+    }
+}

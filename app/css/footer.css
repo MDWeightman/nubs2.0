@@ -1,0 +1,29 @@
+#footer{
+    position: absolute;
+    bottom: -32px;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px 0px 5px 0px;
+    border: solid #dddddd;
+    border-width: 1px;
+    background: #ffffff;
+    transition: 0.2s;
+    z-index: 4;
+}
+#footer.active{
+    bottom: 0px;
+}
+
+	#footer .footerLeft{
+		float: left;
+		margin: 0px 0px 0px 10px;
+	}
+	#footer .footerRight{
+	    float: right;
+	    margin: 0px 10px 0px 0px;
+	}
+		#footer .footerText{
+			color: #212121;
+		}

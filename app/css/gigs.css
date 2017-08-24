@@ -1,0 +1,78 @@
+.gig-card {
+    padding: 6px 12px;
+    color: #ffffff;
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    /*  
+    border: 1px solid #727272;
+    border-bottom: 4px solid;
+    */
+}
+
+.gig-card-band {
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
+    padding: 0px 0px;
+}
+
+.gig-card-location {
+    font-size: 16px;
+}
+
+.gig-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.gig-date-date {
+    padding: 0px 0px 5px 0px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.gig-date-month {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.gig-date-day {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.gig-card-type {
+    position: absolute;
+    top: 0px;
+    right: 16px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+.calendar-event-card {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+}
+
+.calendar-event-form-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendar-event-form-item-label {
+    flex: 0 0 auto;
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 12px;
+    font-size: 16px;
+}
+
+.calendar-event-form-item-input {
+    flex: 1 1 auto;
+}

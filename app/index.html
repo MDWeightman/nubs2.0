@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Band Calendar</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta id="theme-color" name="theme-color" content="#2196f3" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/fav-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/fav-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/fav-16x16.png">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="css/core.css" rel="stylesheet" type="text/css">
+
+    <link href="css/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/toolbar.css" rel="stylesheet" type="text/css">
+    <link href="css/appbar.css" rel="stylesheet" type="text/css">
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css">
+    <link href="css/content.css" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
+    <link href="css/dialog.css" rel="stylesheet" type="text/css">
+    <link href="css/table.css" rel="stylesheet" type="text/css">
+    <link href="css/datePicker.css" rel="stylesheet" type="text/css">
+    <link href="css/timePicker.css" rel="stylesheet" type="text/css">
+    <link href="css/gigs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="appbar">
+            <div id="appbar-menu" onclick="UI.Sidebar.open(event);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path>
+				</svg>
+            </div>
+            <div id="appbar-icon"></div>
+            <div id="appbar-middle">
+                <div id="appbar-server"></div>
+                <div id="appbar-title">
+                    <div id="appbar-title-text"></div>
+                </div>
+            </div>
+            <div id="appbar-right">
+                <div id="appbar-user">
+                    <div id="appbar-user-name">Login</div>
+                    <div id="appbar-user-avatar" class="hidden">
+                        <img id="appbar-user-avatar-image" src="images/User-48.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content-container">
+            <div id="sidebar">
+                <div id="sidebar-header">
+                    <div id="sidebar-header-text"></div>
+                </div>
+                <div id="sidebar-content"></div>
+                <div id="sidebar-footer" onclick="this.parentElement.classList.toggle('collapsed')">
+                    <div id="sidebar-collapse">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M 14.78125 2.28125 L 5.78125 11.28125 L 5.09375 12 L 5.78125 12.71875 L 14.78125 21.71875 L 16.21875 20.28125 L 7.9375 12 L 16.21875 3.71875 L 14.78125 2.28125 z"></path>
+						</svg>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="toolbar">
+                    <div id="toolbar-title">
+                        <div id="toolbar-title-text"></div>
+                    </div>
+                    <div id="toolbar-actions"></div>
+                </div>
+                <div id="toolbar-tabs"></div>
+                <div id="workspace"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDFDzl9otaLrrXtyVI2FaTeFKIZxDfFS_k",
+            authDomain: "band-calendar-d77f2.firebaseapp.com",
+            databaseURL: "https://band-calendar-d77f2.firebaseio.com",
+            projectId: "band-calendar-d77f2",
+            storageBucket: "band-calendar-d77f2.appspot.com",
+            messagingSenderId: "698243681584"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="js/libs/Moments.js"></script>
+    <script src="js/libs/Sortable.js"></script>
+    <script src="js/Utils.js"></script>
+    <script src="js/Constants.js"></script>
+
+    <!--Data -->
+    <script src="js/Data/Firebase.js"></script>
+    <script src="js/Data/Bands.js"></script>
+    <script src="js/Data/Gigs.js"></script>
+    <script src="js/Data/Holidays.js"></script>
+    <script src="js/Data/Practices.js"></script>
+    <script src="js/Data/User.js"></script>
+
+    <!-- UI -->
+    <script src="js/UI/Gigs/GigCard.js"></script>
+    <script src="js/UI/Appbar.js"></script>
+    <script src="js/UI/FAB.js"></script>
+    <script src="js/UI/Dialog.js"></script>
+    <script src="js/UI/Grid.js"></script>
+    <script src="js/UI/Header.js"></script>
+    <script src="js/UI/Menu.js"></script>
+    <script src="js/UI/Sidebar.js"></script>
+    <script src="js/UI/Table.js"></script>
+    <script src="js/UI/Toolbar.js"></script>
+
+    <script src="js/UI/Input/BoolInput.js"></script>
+    <script src="js/UI/Input/TextInput.js"></script>
+    <script src="js/UI/Input/DataModifier.js"></script>
+    <script src="js/UI/Input/DatePicker.js"></script>
+    <script src="js/UI/Input/TimePicker.js"></script>
+
+    <script src="js/UI.js"></script>
+
+    <!--Screen -->
+    <script src="js/Screen/Screen.js"></script>
+    <script src="js/Screen/Screen_Calendar.js"></script>
+    <script src="js/Screen/Screen_Bands.js"></script>
+
+    <script src="js/Application.js"></script>
+
+</body>
+
+</html>
