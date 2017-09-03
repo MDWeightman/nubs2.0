@@ -9,12 +9,13 @@ class TextInput {
         this.style = o ? o.style || null : null;
         this.placeholder = o ? o.placeholder || null : null;
         this.event = o ? o.event || null : null;
+        this.listener = o ? o.listener || 'keyup' : 'keyup';
     }
 
     addEventListener() {
         setTimeout(() => {
             if (document.getElementById(this.id)) {
-                document.getElementById(this.id).addEventListener("change", () => {
+                document.getElementById(this.id).addEventListener(this.listener, () => {
                     let value = document.getElementById(this.id).value;
                     this.value = value;
                     if (this.data) {

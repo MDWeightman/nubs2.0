@@ -56,6 +56,10 @@ div#appbar {
     height: 30px;
 }
 
+#appbar-icon img.small {
+    display: none;
+}
+
 #appbar-right {
     flex: 0 0 auto;
     margin: 0px 10px 0px 0px;
@@ -118,10 +122,15 @@ div#appbar-server {
     #appbar-user {
         padding: 9px 10px 9px 10px;
     }
-    #appbar-icon {
+    /* #appbar-icon {
+        display: none;
+    } */
+    #appbar-icon img.large {
         display: none;
     }
-
+    #appbar-icon img.small {
+        display: block;
+    }
     #appbar-title {
         margin: 0px 6px;
     }

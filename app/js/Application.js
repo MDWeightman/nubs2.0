@@ -13,6 +13,7 @@ class _Application {
 
     getData() {
         Games.getData();
+        Users.getData();
     }
 
     readonly() {

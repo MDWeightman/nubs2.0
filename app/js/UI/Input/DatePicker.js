@@ -112,7 +112,7 @@ class DatePickerCalendar {
         }
     }
 
-    setUp() {
+    setup() {
         if (this.monthMenu.options.items.length == 0) {
             this.setMenu();
         }
@@ -209,7 +209,7 @@ class DatePickerCalendar {
     update() {
         this.currentDate.setMonth(Number(this.monthMenu.selected));
         this.currentDate.setYear(Number(this.yearMenu.selected));
-        this.setUp();
+        this.setup();
         document.getElementById("dialog-content").innerHTML = this.render();
     }
 

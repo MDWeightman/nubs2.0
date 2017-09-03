@@ -44,7 +44,10 @@
 					<path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path>
 				</svg>
             </div>
-            <div id="appbar-icon"></div>
+            <div id="appbar-icon">
+                <img src="images/logo-white.png" class="large" />
+                <img src="images/logo-white-small.png" class="small" />
+            </div>
             <div id="appbar-middle">
                 <div id="appbar-server"></div>
                 <div id="appbar-title">
@@ -87,23 +90,23 @@
         </div>
     </div>
 
-    <!-- <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script src="//connect.facebook.net/en_US/sdk.js"></script>
     <script>
         FB.init({
             appId: '1758235390857038',
             status: true,
             xfbml: true,
-            version: 'v2.9'
+            version: 'v2.10'
         });
         FB.login(
             function(response) {
                 console.log(response);
             }, {
-                scope: 'user_likes',
+                scope: 'user_likes,user_birthday',
                 auth_type: 'rerequest'
             }
         );
-    </script> -->
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script>
@@ -127,6 +130,7 @@
     <!--Data -->
     <script src="js/Data/Firebase.js"></script>
     <script src="js/Data/User.js"></script>
+    <script src="js/Data/Users.js"></script>
     <script src="js/Data/Games.js"></script>
 
     <!-- UI -->
@@ -148,6 +152,7 @@
     <script src="js/UI/Input/TimePicker.js"></script>
 
     <script src="js/UI/Games/NewGameCards.js"></script>
+    <script src="js/UI/Games/SetupGame.js"></script>
 
     <script src="js/UI.js"></script>
 

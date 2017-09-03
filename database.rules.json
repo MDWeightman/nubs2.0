@@ -1,9 +1,12 @@
 {
-  "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null",
-    "games":{
-    	".read": true
+    "rules": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "games": {
+            ".read": true
+        },
+        "users": {
+            ".read": true
+        }
     }
-  }
 }

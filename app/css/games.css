@@ -56,3 +56,88 @@
 .new-game-card-header-title {
     flex: 1 1 auto;
 }
+
+.setup-card {
+    padding: 12px 12px;
+    margin: 0px 12px 12px 0px;
+    color: #727272;
+    background: #ffffff;
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+    width: calc(100% - 24px);
+    cursor: pointer;
+}
+
+.setup-card-line {
+    flex: 1 1 auto;
+    display: flex;
+    /* height: 34px; */
+    line-height: 34px;
+}
+
+.setup-card-line-label {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+}
+
+.setup-card-line-input {
+    flex: 1 1 auto;
+}
+
+.setup-player-groups {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.setup-player-groups .table {
+    flex: 1 1 auto;
+    width: 50%;
+    margin: 0px;
+    box-shadow: none;
+}
+.setup-player-groups.p2 .setup-game-player-list-container {
+    width: calc(50% - 40px);
+}
+.setup-player-groups.p4 .setup-game-player-list-container {
+    width: calc(25% - 120px);
+}
+
+.setup-player-card {
+    display: flex;
+    height: 40px;
+    padding: 6px;
+    color: #ffffff;
+    cursor: -webkit-grab;
+}
+
+.setup-player-card.male{
+    background-color: #039BE5;
+}
+.setup-player-card.female{
+    background-color: #E91E63;
+}
+
+.setup-player-card-avatar {
+    width: 40px;
+    flex: 0 0 auto;
+    height: 40px;
+    margin: 0px 12px 0px 0px
+}
+
+.setup-player-card-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+}
+
+.setup-player-card-info-name {
+    font-size: 14px;
+}

@@ -1,10 +1,10 @@
 class NewGameCards {
     constructor() {
         this.cards = [];
-        this.setUp();
+        this.setup();
     }
 
-    setUp() {
+    setup() {
         for (let k in Games.data) {
             let game = Games.data[k];
             this.cards.push(new NewGameCard({
@@ -32,9 +32,27 @@ class NewGameCard {
         this.data = o.data;
     }
 
+    event() {
+        Screen_NewGame.setSetupGame(new SetupGame({
+            data: Games.getGame(this.key),
+            title: `New ${this.data.name}`
+        }));
+    }
+
+    addEventListener() {
+        setTimeout(() => {
+            if (document.getElementById(this.key)) {
+                document.getElementById(this.key).addEventListener('click', () => {
+                    this.event();
+                });
+            }
+        }, 1000);
+    }
+
     render() {
+        this.addEventListener();
         return `
-        <div class="new-game-card" title="Click to start new a game of ${this.name}">
+        <div id="${this.key}" class="new-game-card" title="Click to start new a game of ${this.data.name}">
             <div class="new-game-card-header">
 				<div class="new-game-card-header-title">${this.data.name}</div>
 				<div class="new-game-card-header-played">

@@ -35,7 +35,7 @@ class Sidebar {
         this.container.classList.remove("active");
     }
 
-    setUp() {
+    setup() {
         if (this.groups.length == 0) {
             if (User.data) {
                 this.addGroup(new SidebarGroup({
@@ -66,7 +66,7 @@ class Sidebar {
     }
 
     render() {
-        this.setUp();
+        this.setup();
         let HTML = '';
 
         for (let i = 0; i < this.groups.length; i++) {

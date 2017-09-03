@@ -3,10 +3,21 @@ class _Screen_NewGame {
         this.title = 'New Game';
         this.name = 'NewGame';
         this.newCameCards = null;
+        this.setupGame = null;
     }
 
     clear() {
 
+    }
+
+    setSetupGame(setup) {
+        this.setupGame = setup;
+        this.title = this.setupGame.title;
+        this.render();
+    }
+
+    renderSetupGame() {
+        Application.render(this.setupGame.render());
     }
 
     renderGameCards() {
@@ -17,7 +28,11 @@ class _Screen_NewGame {
     render() {
         UI.Toolbar.setTitle(this.title);
         UI.Toolbar.tabs.clear();
-        this.renderGameCards();
+        if (!this.setupGame) {
+            this.renderGameCards();
+        } else {
+            this.renderSetupGame();
+        }
     }
 }
 

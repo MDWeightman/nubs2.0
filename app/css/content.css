@@ -87,6 +87,10 @@
     align-items: flex-start;
 }
 
+.header-label:not(:first-of-type) {
+    margin: 24px 0 24px 0;
+}
+
 .header-label-text {
     color: rgba(0, 0, 0, 0.54);
     display: block;

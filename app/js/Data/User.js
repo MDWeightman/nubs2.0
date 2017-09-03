@@ -32,10 +32,13 @@ class _User extends Firebase {
     }
 
     update(user, fbUser) {
+        console.log('user', user);
+        console.log('fbUser', fbUser);
         let data = {
             firstName: fbUser.first_name,
             lastName: fbUser.first_name,
             displayName: fbUser.name,
+            ageRange: fbUser.age_range,
             email: user.email,
             phoneNumber: user.phoneNumber,
             photoURL: user.photoURL,
@@ -57,6 +60,7 @@ class _User extends Firebase {
         updates[`/${this.node}/${data.uid}/uidFB`] = data.fbUid;
         updates[`/${this.node}/${data.uid}/locale`] = data.locale;
         updates[`/${this.node}/${data.uid}/link`] = data.link;
+        data.ageRange ? updates[`/${this.node}/${data.uid}/ageRange`] = data.ageRange : null;
         updates[`/${this.node}/${data.uid}/phoneNumber`] = data.phoneNumber;
         this.data = data;
         firebase.database().ref().update(updates).then(() => {
@@ -65,7 +69,7 @@ class _User extends Firebase {
     }
 
     getFbUser(user) {
-        FB.api(`/${user.providerData[0].uid}`, { fields: 'id,name,email,first_name,last_name,age_range,link,gender,locale,picture,timezone,updated_time,verified', access_token: '1758235390857038|c568abc88bd94a9dfef7de0283653e52' }, function(fbUser) {
+        FB.api(`/${user.providerData[0].uid}`, { fields: 'id,name,email,first_name,last_name,birthday,age_range,link,gender,locale,picture,timezone,updated_time,verified', access_token: '1758235390857038|c568abc88bd94a9dfef7de0283653e52' }, function(fbUser) {
             User.update(user, fbUser);
         });
     }
