@@ -28,7 +28,8 @@ class SetupGameStep1 {
             badge: 1,
             label: 'Setup'
         })
-        this.sessions = null;
+		this.sessions = null;
+		this.locales = null;
         this.setup();
     }
 
@@ -53,8 +54,18 @@ class SetupGameStep1 {
 		<div class="setup-card-line">
 			<div class="setup-card-line-label">Sessions</div>
 			<div class="setup-card-line-input">${this.sessions.render()}</div>				
-			<div class="setup-card-line-label" style="color:#cccccc;margin-left:12px;">(Players<span id="sessions-players" style="margin-left:6px;">${this.sessions.value * this.data.players}</span>)</div></div>
+			<div class="setup-card-line-label" style="color:#cccccc;margin-left:12px;">(Players<span id="sessions-players" style="margin-left:6px;">${this.sessions.value * this.data.players}</span>)</div>
+		</div>
+		<div class="setup-card-line">
+			<div class="setup-card-line-label">Locales</div>
+			<div class="setup-card-line-input">
+				${Users.locales.map(locale=>{
+					return locale;
+				}).join(', ')}
+			</div>
 		</div>`
+
+
     }
 
     render() {
@@ -195,26 +206,25 @@ class SetupPlayersGroup {
                     ghostClass: 'ghost',
                     chosenClass: "chosen",
                     onUpdate: (evt) => {
-                        console.log(self.id, evt);
+                        console.log(this.id, evt);
                     },
                     onAdd: (evt) => {
                         //self._moveUser(evt, "A");
                     }
                 });
-                console.log(this.id, this.sortable);
             }, 1000);
         }
     }
 
     updateHeader() {
-        document.getElementById(`${this.id}_header`).innerHTML = `Player ${this.label} [${this.list.length}]`;
+        document.getElementById(`${this.id}_header`).innerHTML = `Player ${this.label} <div class="badge">${this.list.length}</div>`;
     }
 
     renderList() {
         return `
-        <div id="${this.id}" class="setup-game-player-list-container">
-            <div id="${this.id}_header" class="setup-game-player-list-header">Player ${this.label} [${this.list.length}]</div>
-            <div id="${this.id}_list" class="setup-game-player-list">
+        <div id="${this.id}" class="setup-game-list-container player">
+            <div id="${this.id}_header" class="setup-game-list-header player">Player ${this.label} <div class="badge">${this.list.length}</div></div>
+            <div id="${this.id}_list" class="setup-game-list player">
                 ${this.playerCards.map(card=>{
                     return card.render();
                 }).join('')}
@@ -224,9 +234,15 @@ class SetupPlayersGroup {
 
     renderVs() {
         if (this.vs) {
-            return this.vs.map(card => {
-                return card.render();
-            }).join('');
+			return `
+			<div id="${this.id}" class="setup-game-list-container vs">
+				<div id="${this.id}_header" class="setup-game-list-header vs">VS</div>
+				<div id="${this.id}_list" class="setup-game-list vs">
+					${this.vs.map(card => {
+						return card.render();
+					}).join('')}
+				</div>
+			</div>`
         }
         return '';
     }
