@@ -98,12 +98,12 @@
 
 .setup-player-groups .setup-game-list-container {
     flex: 1 1 auto;
-    width: 50%;
     margin: 0px;
     box-shadow: none;
 }
-.setup-player-groups.p2 .setup-game-list-container.vs {
+.setup-player-groups .setup-game-list-container.vs {
     width: 40px;
+    flex: 0 0 auto;
 }
 .setup-player-groups.p2 .setup-game-list-container.player {
     width: calc(50% - 40px);
@@ -118,6 +118,21 @@
     padding: 6px;
     color: #ffffff;
     cursor: -webkit-grab;
+    position: relative;
+}
+.setup-vs-card {
+    display: flex;
+    height: 52px;
+}
+.setup-vs-card-icon {
+	padding: 12px;
+	height: 22px;
+	width: 16px;
+	fill: #727272;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .setup-player-card.male{
@@ -141,17 +156,29 @@
     border: 1px solid #ffffff;
 }
 
-.setup-player-card-info-name {
+.setup-player-card-info.name {
     font-size: 14px;
 }
-
-.setup-game-list-header {display: flex;justify-content: center;}
-
-.setup-vs-card-icon {
-	padding: 15px;
-	height: 22px;
-	fill: #727272;
+.setup-player-card-info.locale {
+	font-size: 12px;
+	position: absolute;
+	right: 6px;
+	top: 0px;
+	color: rgba(255,255,255,0.7);
 }
+
+.setup-game-list-header {
+	display: flex;
+	justify-content: center;
+}
+
+.setup-game-list.vs {
+	width: 40px;
+	content: center;
+	height: 52px;
+	flex: 1 1 auto;
+}
+
 
 .setup-game-list-header .badge {
 	margin: 5px 0px 0px 10px;
@@ -167,4 +194,9 @@
 }
 .setup-game-list-header .badge.error {
 	background-color: #F44336;
+}
+
+
+.setup-vs-card-icon svg {
+	flex: 1 1 auto;
 }

@@ -32,6 +32,8 @@ Constants.SVG["OK"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 2
 Constants.SVG["ADD"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 11 5 L 11 11 L 5 11 L 5 13 L 11 13 L 11 19 L 13 19 L 13 13 L 19 13 L 19 11 L 13 11 L 13 5 L 11 5 z"></path></svg>';
 Constants.SVG["CANCEL"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10C22,6.5,17.5,2,12,2z M16.9,15.5l-1.4,1.4L12,13.4l-3.5,3.5 l-1.4-1.4l3.5-3.5L7.1,8.5l1.4-1.4l3.5,3.5l3.5-3.5l1.4,1.4L13.4,12L16.9,15.5z"></path></svg>';
 Constants.SVG["SEND"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 2 3 L 2 10.8125 L 18 12 L 2 13.1875 L 2 21 L 22 12 L 2 3 z"></path></svg>';
+Constants.SVG["PAST"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 12 2 C 9.242188 2 6.746094 3.125 4.9375 4.9375 L 3 3 L 3 8 L 8 8 L 6.34375 6.34375 C 7.792969 4.894531 9.792969 4 12 4 C 16.410156 4 20 7.589844 20 12 C 20 16.410156 16.410156 20 12 20 C 7.589844 20 4 16.410156 4 12 C 4 11.660156 4.019531 11.328125 4.0625 11 L 2.0625 11 C 2.03125 11.328125 2 11.660156 2 12 C 2 17.515625 6.484375 22 12 22 C 17.515625 22 22 17.515625 22 12 C 22 6.484375 17.515625 2 12 2 Z M 11 7 L 11 12.40625 L 14.28125 15.6875 L 15.6875 14.28125 L 13 11.59375 L 13 7 Z "></path></svg>'
+
 
 Constants.SVG["CALENDAR"] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 6 2 L 6 4 L 5 4 C 3.9 4 3 4.9 3 6 L 3 20 C 3 21.1 3.9 22 5 22 L 19 22 C 20.1 22 21 21.1 21 20 L 21 6 C 21 4.9 20.1 4 19 4 L 18 4 L 18 2 L 16 2 L 16 4 L 8 4 L 8 2 L 6 2 z M 5 9 L 19 9 L 19 20 L 5 20 L 5 9 z M 12 13 L 12 18 L 17 18 L 17 13 L 12 13 z"></path></svg>';
 

@@ -77,6 +77,15 @@ class _Utils{
 		}
 		return array;
 	}
+	arrayUnique(a){
+    	var u = [];
+		for (var i = 0; i < a.length; i++) {
+			if (u.indexOf(a[i]) == -1) {
+				u.push(a[i]);
+			}
+    	}
+		return u;
+	}
 	
 	sortArrayOn(arr, index){
 		let s = arr.sort(function(a, b){

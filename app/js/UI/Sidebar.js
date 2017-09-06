@@ -51,7 +51,7 @@ class Sidebar {
                             }
                         }),
                         new SidebarItem({
-                            icon: Constants.SVG.CALENDAR,
+                            icon: Constants.SVG.PAST,
                             label: 'Played Games',
                             screen: 'PlayedGames',
                             event: () => {

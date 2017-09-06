@@ -1,72 +1,28 @@
-[debug] [2017-08-25T07:59:10.863Z] ----------------------------------------------------------------------
-[debug] [2017-08-25T07:59:10.867Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\micah\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-08-25T07:59:10.867Z] CLI Version:   3.9.2
-[debug] [2017-08-25T07:59:10.867Z] Platform:      win32
-[debug] [2017-08-25T07:59:10.867Z] Node Version:  v6.9.2
-[debug] [2017-08-25T07:59:10.868Z] Time:          Fri Aug 25 2017 08:59:10 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:10.868Z] ----------------------------------------------------------------------
+[debug] [2017-09-06T09:44:15.818Z] ----------------------------------------------------------------------
+[debug] [2017-09-06T09:44:15.823Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mweight\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-09-06T09:44:15.825Z] CLI Version:   3.10.0
+[debug] [2017-09-06T09:44:15.825Z] Platform:      win32
+[debug] [2017-09-06T09:44:15.826Z] Node Version:  v6.11.3
+[debug] [2017-09-06T09:44:15.826Z] Time:          Wed Sep 06 2017 10:44:15 GMT+0100 (GMT Daylight Time)
+[debug] [2017-09-06T09:44:15.826Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-08-25T07:59:10.890Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-08-25T07:59:10.890Z] > authorizing via signed-in user
-[debug] [2017-08-25T07:59:10.892Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-08-25T07:59:10.893Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/1gtFL97ucA2buj3RdF4sCb4UYtqk_pi7UFPAFGWjC-k',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Fri Aug 25 2017 08:59:10 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:11.753Z] <<< HTTP RESPONSE 200
-[debug] [2017-08-25T07:59:11.774Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nubs2-1c8ca  
- Fri Aug 25 2017 08:59:11 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:12.741Z] <<< HTTP RESPONSE 200
-[debug] [2017-08-25T07:59:12.742Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nubs2-1c8ca/tokens  
- Fri Aug 25 2017 08:59:12 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:13.505Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T09:44:15.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-06T09:44:15.871Z] > authorizing via signed-in user
+[debug] [2017-09-06T09:44:15.876Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nubs2-1c8ca  
+ Wed Sep 06 2017 10:44:15 GMT+0100 (GMT Daylight Time)
+[debug] [2017-09-06T09:44:16.610Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T09:44:16.611Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nubs2-1c8ca/tokens  
+ Wed Sep 06 2017 10:44:16 GMT+0100 (GMT Daylight Time)
+[debug] [2017-09-06T09:44:17.128Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'C:\Users\micah\projects\nubs2.0'...
+[info] === Serving from 'C:\inetpub\wwwroot\nubs2.0'...
 [info] 
-[debug] [2017-08-25T07:59:13.510Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nubs2-1c8ca  
- Fri Aug 25 2017 08:59:13 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:14.459Z] <<< HTTP RESPONSE 200
-[debug] [2017-08-25T07:59:14.460Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1044327703187/clients/_:getWebAppConfig  
- Fri Aug 25 2017 08:59:14 GMT+0100 (GMT Daylight Time)
-[debug] [2017-08-25T07:59:15.192Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: app
-[info] +  hosting: Local server: http://localhost:5000
-
-[debug] [2017-09-03T20:51:03.305Z] ----------------------------------------------------------------------
-[debug] [2017-09-03T20:51:03.307Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\micah\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-09-03T20:51:03.308Z] CLI Version:   3.9.2
-[debug] [2017-09-03T20:51:03.308Z] Platform:      win32
-[debug] [2017-09-03T20:51:03.308Z] Node Version:  v6.9.2
-[debug] [2017-09-03T20:51:03.308Z] Time:          Sun Sep 03 2017 21:51:03 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:03.308Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2017-09-03T20:51:03.326Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-09-03T20:51:03.326Z] > authorizing via signed-in user
-[debug] [2017-09-03T20:51:03.328Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-09-03T20:51:03.328Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/1gtFL97ucA2buj3RdF4sCb4UYtqk_pi7UFPAFGWjC-k',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sun Sep 03 2017 21:51:03 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:05.812Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-03T20:51:05.860Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nubs2-1c8ca  
- Sun Sep 03 2017 21:51:05 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:08.786Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-03T20:51:08.788Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nubs2-1c8ca/tokens  
- Sun Sep 03 2017 21:51:08 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:11.798Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\micah\projects\nubs2.0'...
-[info] 
-[debug] [2017-09-03T20:51:11.807Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nubs2-1c8ca  
- Sun Sep 03 2017 21:51:11 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:13.520Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-03T20:51:13.521Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1044327703187/clients/_:getWebAppConfig  
- Sun Sep 03 2017 21:51:13 GMT+0100 (GMT Daylight Time)
-[debug] [2017-09-03T20:51:14.043Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T09:44:17.134Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nubs2-1c8ca  
+ Wed Sep 06 2017 10:44:17 GMT+0100 (GMT Daylight Time)
+[debug] [2017-09-06T09:44:17.778Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T09:44:17.779Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1044327703187/clients/_:getWebAppConfig  
+ Wed Sep 06 2017 10:44:17 GMT+0100 (GMT Daylight Time)
+[debug] [2017-09-06T09:44:18.208Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: app
 [info] +  hosting: Local server: http://localhost:5000
 
