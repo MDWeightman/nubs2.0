@@ -428,7 +428,7 @@ class SetupPlayerCard {
 			</div>
 			<div class="setup-player-card-info">
 				<div class="setup-player-card-info name">${this.player.displayName}</div>
-				<div class="setup-player-card-info locale">${this.player.locale}</div>
+				<div class="setup-player-card-info locale"><img src="images/locale/${this.player.locale}.gif" /></div>
 				<div class="setup-player-card-info age"></div>
 			</div>
 		</div>`

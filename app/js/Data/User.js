@@ -41,7 +41,7 @@ class _User extends Firebase {
             ageRange: fbUser.age_range,
             email: user.email,
             phoneNumber: user.phoneNumber,
-            photoURL: user.photoURL,
+            photoURL: fbUser.picture.data.url,
             link: fbUser.link,
             gender: fbUser.gender,
             locale: fbUser.locale,
